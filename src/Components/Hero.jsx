@@ -82,14 +82,19 @@ export default function App() {
         const isStar = el.classList.contains('floating-star');
         el.dataset.depth = Math.random() * 0.4 + 0.1;
 
+        // --- MODIFICATION START ---
+        // The original animation was confined to a small area (`random(-250, 250)`).
+        // This new animation moves the elements across a much wider range,
+        // making them drift slowly across the entire screen.
         gsap.to(el, {
-          x: `random(-250, 250)`,
-          y: `random(-250, 250)`,
-          duration: 'random(10, 20)',
+          x: `random(-${window.innerWidth / 2}, ${window.innerWidth / 2})`,
+          y: `random(-${window.innerHeight / 2}, ${window.innerHeight / 2})`,
+          duration: 'random(25, 40)', // Increased duration for slower movement
           ease: 'none',
           repeat: -1,
           yoyo: true,
         });
+        // --- MODIFICATION END ---
 
         if (isStar) {
           gsap.to(el, {
@@ -100,6 +105,8 @@ export default function App() {
         }
       });
 
+      // This is the text animation that runs on page load, as you requested.
+      // It was already in the original code and remains unchanged.
       const heroText = gsap.utils.toArray('.hero-text');
       heroText.forEach(text => {
         const chars = text.textContent.split(''); text.textContent = '';
