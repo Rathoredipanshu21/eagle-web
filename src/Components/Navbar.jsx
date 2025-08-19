@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom"; // ✅ Import Link
 import logo from "../Assets/logo.png";
+=======
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
+>>>>>>> 57e2a9f0795f23e2210a8cc4d6a37e7289f3946c
 
 const Navbar = () => {
   const headerRef = useRef(null);
