@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../Assets/logo.png';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const headerRef = useRef(null);
